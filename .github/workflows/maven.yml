@@ -39,11 +39,11 @@ jobs:
       run: ls -al target
       
     - name: Step 06. Set Executable Permissions
-      run: chmod +x target/1.0-SNAPSHOT.jar
+      run: chmod +x target/CIProject-1.0-SNAPSHOT.jar
       
     - name: Step 07. Upload Artifact
       uses: actions/upload-artifact@v4
       with:
          name: javiergs-app
-         path: target/1.0-SNAPSHOT.jar
+         path: target/CIProject-1.0-SNAPSHOT.jar
 
