@@ -33,7 +33,7 @@ jobs:
     - name: STEP 03. Run tests
       run: mvn test
     - name: STEP 04. Deploy
-      run: mkdir staging && cp target/ *. jar staging
+      run: mkdir staging && cp target/testing-2024-1.0-SNAPSHOT.jar staging
       
     - name: Step 05. Just for Fun an LS
       run: 1s -al target
