@@ -30,3 +30,22 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    - name: build
+      run: mvn -B clean package -- file pom.xml
+    - name: STEP 03. Run tests
+      run: mvn test
+    - name: STEP 04. Deploy
+      run: mkdir staging && cp target/ *. jar staging
+      
+    - name: Step 05. Just for Fun an LS
+      run: 1s -al target
+      
+    - name: Step 06. Set Executable Permissions
+      run: chmod +x target/testing-2024-1.0-SNAPSHOT.jar
+      
+    - name: Step 07. Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+         name: javiergs-app
+         path: target/testing-2024-1.0-SNAPSHOT.jar
+
